@@ -1,0 +1,29 @@
+# Problem Definition
+
+WISE Academy, an e-learning company, needs to analyze its sales data from the Customers, Products, and Transactions tables. The specific business problem is to identify the top-selling products per region and quarter, measure month-to-month revenue growth, segment customers into quartiles based on total spend, and track cumulative sales trends over time. These insights will help management make measurable, data-driven decisions about marketing, promotions, and resource allocation.
+
+Expected measurable outcomes:
+
+Ranked list of top 5 products per region and quarter.
+
+Running monthly totals of sales by region.
+
+Month-over-month revenue growth percentages.
+
+Customer segmentation into quartiles for campaign targeting.
+
+Moving averages to identify long-term trends.
+
+# Business Context
+
+WISE Academy is a private education technology company based in Rwanda. It provides online programming and digital skills training to students. The Sales & Marketing department is responsible for promoting courses, acquiring new students, and retaining existing learners. By analyzing sales transactions using advanced SQL window functions, WISE Academy can optimize its marketing campaigns, identify high-value students, and improve overall revenue forecasting.
+
+# Academic Integrity Statement
+
+I, BYIRINGIRO Urban Bobola, confirm that this assignment is my own original work. I used publicly available documentation, lectures, and textbooks to complete it. I have not received unauthorized assistance, nor have I shared my completed work with others. Any external resources I consulted are properly referenced in the README.md.
+
+I fully understand that plagiarism, use of unauthorized AI-generated content, or academic dishonesty of any form may result in receiving a failing grade or further disciplinary action as outlined by AUCA’s academic integrity policy.
+
+Signature:
+BYIRINGIRO Urbain Bobola
+Date: 22 Sept 2025
