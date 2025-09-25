@@ -110,13 +110,11 @@ The database ensures:
 1. **Install Oracle Database XE** (21c / 18c).  
 2. **Install Oracle SQL Developer** or use `sqlplus`.  
 3. **Create schema user:**  
-```sql
+
 CREATE USER wiseacademy IDENTIFIED BY wisepass;
 GRANT CREATE SESSION, CREATE TABLE, CREATE VIEW, CREATE SEQUENCE, CREATE PROCEDURE, CREATE TRIGGER TO wiseacademy;
 
-
-## Screenshots
-
+## Screenshoots
 [text](screenshots)
 ![text](screenshots/oracle.PNG)
 ![text](screenshots/oracle2.PNG)
@@ -129,26 +127,26 @@ GRANT CREATE SESSION, CREATE TABLE, CREATE VIEW, CREATE SEQUENCE, CREATE PROCEDU
 ![text](screenshots/oracle14.PNG)
 
 
-## 📚 References  
+##  References  
 
 > The following references were consulted to design the **Oracle schema (customers, products, transactions)** and to implement analytic queries using **window functions**:
 
-1. 📖 [Oracle Documentation – Analytic Functions](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Analytic-Functions.html)  
-2. 📖 [Oracle Documentation – Identity Columns](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/CREATE-TABLE.html#GUID-4F63D7DB-0B9A-4D8F-9D1D-6B5E7D4B70E2)  
-3. 📖 [Oracle Documentation – LAG and LEAD](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/LAG.html)  
-4. 🎓 [Oracle Tutorial – Window Functions in Oracle](https://www.oracletutorial.com/oracle-analytic-functions/)  
-5. 📘 [OracleBase – Analytic Functions Guide](https://oracle-base.com/articles/misc/analytic-functions)  
-6. 📝 [Database Star – LAG and LEAD in Oracle SQL](https://www.databasestar.com/oracle-lag-lead/)  
-7. 📗 [GeeksforGeeks – SQL Window Functions](https://www.geeksforgeeks.org/sql-window-functions/)  
-8. 📕 [LearnSQL – ROWS vs RANGE in Window Functions](https://learnsql.com/blog/sql-window-frame-rows-vs-range/)  
-9. 📰 [Oracle Blog – Cumulative Totals with Analytic Functions](https://blogs.oracle.com/sql/post/analytic-functions)  
-10. 📚 AUCA Course Notes & Lectures (2025)  
+1.  [Oracle Documentation – Analytic Functions](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Analytic-Functions.html)  
+2.  [Oracle Documentation – Identity Columns](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/CREATE-TABLE.html#GUID-4F63D7DB-0B9A-4D8F-9D1D-6B5E7D4B70E2)  
+3.  [Oracle Documentation – LAG and LEAD](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/LAG.html)  
+4.  [Oracle Tutorial – Window Functions in Oracle](https://www.oracletutorial.com/oracle-analytic-functions/)  
+5.  [OracleBase – Analytic Functions Guide](https://oracle-base.com/articles/misc/analytic-functions)  
+6.  [Database Star – LAG and LEAD in Oracle SQL](https://www.databasestar.com/oracle-lag-lead/)  
+7.  [GeeksforGeeks – SQL Window Functions](https://www.geeksforgeeks.org/sql-window-functions/)  
+8.  [LearnSQL – ROWS vs RANGE in Window Functions](https://learnsql.com/blog/sql-window-frame-rows-vs-range/)  
+9.  [Oracle Blog – Cumulative Totals with Analytic Functions](https://blogs.oracle.com/sql/post/analytic-functions)  
+10. (AUCA Course Notes & Lectures (2025)  
 
 ---
 
-## 👨‍💻 Author  
+##  Author  
 
 **BYIRINGIRO Urban Bobola**  
-🎓 Student & Developer | WISE Academy  
-📍 Kigali, Rwanda  
+ Student & Developer | WISE Academy  
+ Kigali, Rwanda  
 
