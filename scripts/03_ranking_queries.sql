@@ -1,21 +1,18 @@
--- Top products per region & quarter with RANK
-SELECT region, year, quarter, product_id, product_name, total_revenue, rnk
-FROM (
-  SELECT region, year, quarter, product_id, product_name, total_revenue,
-         RANK() OVER (PARTITION BY region, year, quarter ORDER BY total_revenue DESC) AS rnk
-  FROM (
-    SELECT c.region,
-           TO_CHAR(t.sale_date,'YYYY') AS year,
-           'Q' || TO_CHAR(TRUNC((TO_NUMBER(TO_CHAR(t.sale_date,'MM'))-1)/3)+1) AS quarter,
-           p.product_id, p.name AS product_name,
-           SUM(t.amount) AS total_revenue
-    FROM transactions t
-    JOIN customers c ON c.customer_id = t.customer_id
-    JOIN products p  ON p.product_id = t.product_id
-    GROUP BY c.region, TO_CHAR(t.sale_date,'YYYY'),
-             'Q' || TO_CHAR(TRUNC((TO_NUMBER(TO_CHAR(t.sale_date,'MM'))-1)/3)+1),
-             p.product_id, p.name
-  ) grp
+-- Top 5 students by total payments (last 12 months)
+WITH student_totals AS (
+  SELECT s.student_id,
+         s.first_name || ' ' || s.last_name AS student_name,
+         NVL(SUM(p.amount),0) AS total_paid
+  FROM students s
+  LEFT JOIN enrollments e ON e.student_id = s.student_id
+  LEFT JOIN payments p    ON p.enrollment_id = e.enrollment_id
+  WHERE p.payment_date BETWEEN ADD_MONTHS(TRUNC(SYSDATE,'MM'), -12) AND SYSDATE
+     OR p.payment_date IS NULL
+  GROUP BY s.student_id, s.first_name, s.last_name
 )
-WHERE rnk <= 5
-ORDER BY region, year, quarter, rnk;
+SELECT student_id, student_name, total_paid,
+       RANK() OVER (ORDER BY total_paid DESC)     AS rnk,
+       ROW_NUMBER() OVER (ORDER BY total_paid DESC) AS rn
+FROM student_totals
+ORDER BY total_paid DESC
+FETCH FIRST 5 ROWS ONLY;

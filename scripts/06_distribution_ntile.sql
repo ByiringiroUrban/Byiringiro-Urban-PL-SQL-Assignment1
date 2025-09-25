@@ -1,10 +1,15 @@
--- customer segmentation by total spend per region
-SELECT customer_id, customer_name, region, total_spend,
-       NTILE(4) OVER (PARTITION BY region ORDER BY total_spend DESC) AS quartile,
-       CUME_DIST() OVER (PARTITION BY region ORDER BY total_spend DESC) AS cum_dist
-FROM (
-  SELECT c.customer_id, c.name AS customer_name, c.region, SUM(t.amount) AS total_spend
-  FROM transactions t JOIN customers c ON c.customer_id = t.customer_id
-  GROUP BY c.customer_id, c.name, c.region
-) s
-ORDER BY region, quartile, total_spend DESC;
+-- Student revenue quartiles
+WITH student_totals AS (
+  SELECT s.student_id,
+         s.first_name || ' ' || s.last_name AS student_name,
+         NVL(SUM(p.amount),0) AS total_paid
+  FROM students s
+  LEFT JOIN enrollments e ON e.student_id = s.student_id
+  LEFT JOIN payments p    ON p.enrollment_id = e.enrollment_id
+  GROUP BY s.student_id, s.first_name, s.last_name
+)
+SELECT student_id, student_name, total_paid,
+       NTILE(4) OVER (ORDER BY total_paid DESC) AS quartile,
+       CUME_DIST() OVER (ORDER BY total_paid DESC) AS cum_dist
+FROM student_totals
+ORDER BY total_paid DESC;

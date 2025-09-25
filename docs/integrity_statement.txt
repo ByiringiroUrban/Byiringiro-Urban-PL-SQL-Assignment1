@@ -1,29 +1,64 @@
-# Problem Definition
+# WISE Academy Database Project Documentation
 
-WISE Academy, an e-learning company, needs to analyze its sales data from the Customers, Products, and Transactions tables. The specific business problem is to identify the top-selling products per region and quarter, measure month-to-month revenue growth, segment customers into quartiles based on total spend, and track cumulative sales trends over time. These insights will help management make measurable, data-driven decisions about marketing, promotions, and resource allocation.
+---
 
-Expected measurable outcomes:
+## Problem Definition
 
-Ranked list of top 5 products per region and quarter.
+WISE Academy, an e-learning company, needs to analyze its sales and enrollment data from the **Customers**, **Products**, and **Transactions** tables. The specific business problems include:
 
-Running monthly totals of sales by region.
+* Identifying the top-selling products (courses) per region and quarter.
+* Measuring month-to-month revenue growth across courses.
+* Segmenting customers into quartiles based on their total spend.
+* Tracking cumulative sales trends to monitor long-term progress.
+* Detecting long-term performance through moving averages.
 
-Month-over-month revenue growth percentages.
+These insights will help management make measurable, data-driven decisions about marketing, promotions, student retention, and resource allocation.
 
-Customer segmentation into quartiles for campaign targeting.
+**Expected measurable outcomes:**
 
-Moving averages to identify long-term trends.
+* Ranked list of top 5 products per region and quarter.
+* Running monthly totals of sales by region.
+* Month-over-month revenue growth percentages.
+* Customer segmentation into quartiles for targeted campaigns.
+* Moving averages to identify long-term sales and enrollment trends.
 
-# Business Context
+---
 
-WISE Academy is a private education technology company based in Rwanda. It provides online programming and digital skills training to students. The Sales & Marketing department is responsible for promoting courses, acquiring new students, and retaining existing learners. By analyzing sales transactions using advanced SQL window functions, WISE Academy can optimize its marketing campaigns, identify high-value students, and improve overall revenue forecasting.
+## Business Context
 
-# Academic Integrity Statement
+WISE Academy is a private education technology institution based in Rwanda. It provides online programming and digital skills training to students and professionals. The **Sales & Marketing Department** is responsible for promoting courses, acquiring new students, and retaining existing learners. By analyzing transactions using **Oracle SQL window functions**, WISE Academy can:
 
-I, BYIRINGIRO Urban Bobola, confirm that this assignment is my own original work. I used publicly available documentation, lectures, and textbooks to complete it. I have not received unauthorized assistance, nor have I shared my completed work with others. Any external resources I consulted are properly referenced in the README.md.
+* Optimize its marketing campaigns with data-driven insights.
+* Identify high-value students and reward or target them for further learning opportunities.
+* Improve financial forecasting and detect trends in course popularity and revenue growth.
+* Ensure better allocation of instructors and classroom resources.
 
-I fully understand that plagiarism, use of unauthorized AI-generated content, or academic dishonesty of any form may result in receiving a failing grade or further disciplinary action as outlined by AUCA’s academic integrity policy.
+---
 
-Signature:
-BYIRINGIRO Urbain Bobola
-Date: 22 Sept 2025
+## How the Project Works
+
+This project demonstrates how an **Oracle relational database** with window functions can address the above problems. The workflow includes:
+
+1. **Database Schema**: Creating normalized tables for customers, products (courses), and transactions.
+2. **Data Loading**: Inserting sample records to simulate sales and enrollment data.
+3. **Window Function Queries**:
+
+   * Ranking functions (`ROW_NUMBER`, `DENSE_RANK`) to identify top customers or products.
+   * Aggregate window functions (`SUM OVER`) to calculate cumulative revenue.
+   * Navigation functions (`LAG`, `LEAD`) to measure growth between months.
+   * Distribution functions (`NTILE`, `CUME_DIST`) to segment students/customers.
+   * Moving averages to analyze long-term sales patterns.
+4. **Analysis & Reporting**: Queries generate insights for the management team to guide strategy.
+
+This approach ensures better decision-making, reduces errors compared to spreadsheets, and supports scalable reporting.
+
+---
+
+## Academic Integrity Statement
+
+I, **BYIRINGIRO Urban Bobola**, confirm that this assignment is my own original work. I used publicly available documentation, lectures, and textbooks to complete it. I have not received unauthorized assistance, nor have I shared my completed work with others. Any external resources I consulted are properly referenced.
+
+I fully understand that plagiarism, unauthorized use of AI-generated content, or academic dishonesty of any form may result in a failing grade or further disciplinary action as outlined by AUCA’s academic integrity policy.
+
+**Signature:** BYIRINGIRO Urban Bobola
+**Date:** 22 Sept 2025
